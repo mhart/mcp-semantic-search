@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mcp-semantic-search",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-04-28",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "migrations": [
+    {
+      "new_sqlite_classes": ["SemanticSearchMcp"],
+      "tag": "v1"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "MCP_OBJECT",
+        "class_name": "SemanticSearchMcp"
+      }
+    ]
+  },
+  "vectorize": [
+    {
+      "binding": "VECTORS",
+      "index_name": "my-bge-base-index"
+    }
+  ],
+  "ai": {
+    "binding": "AI"
+  }
+}
