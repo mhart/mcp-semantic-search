@@ -15,8 +15,6 @@ Go to https://playground.ai.cloudflare.com/ and enter https://mcp.developers.clo
 
 Type Shift-Cmd-P and choose "MCP: Add Server..." and then choose "HTTP (server-sent events)", then enter https://mcp.developers.cloudflare.com/sse as the URL.
 
-Go to https://playground.ai.cloudflare.com/ and enter https://mcp.developers.cloudflare.com/sse as the MCP Server
-
 ## Testing locally (requires a populated Vectorize DB)
 
 ```sh
