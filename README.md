@@ -5,7 +5,24 @@
 An MCP Server using the [Agents SDK](https://developers.cloudflare.com/agents/guides/remote-mcp-server/) that can search documentation stored
 in a [Vectorize](https://developers.cloudflare.com/vectorize/) database.
 
-The same code that powers the MCP Server at https://mcp.developers.cloudflare.com/sse
+The same code that powers the MCP Server at https://mcp.developers.cloudflare.com/sse (or https://mcp.developers.cloudflare.com/mcp for the stateless version)
+
+## Using in Claude Desktop
+
+```jsonc
+{
+  "mcpServers": {
+    "cloudflare-docs": {
+      "command": "npx", // or may need the full path, eg if using volta: "/Users/myuser/.volta/bin/npx"
+      "args": ["mcp-remote@latest", "https://mcp.developers.cloudflare.com/mcp"]
+      // Below only needed if you're using a Zero Trust client like Cloudflare WARP
+      // "env": {
+      //   "NODE_EXTRA_CA_CERTS": "/path/to/certificate.pem"
+      // }
+    }
+  }
+}
+```
 
 ## Testing in Cloudflare's AI Playground
 

@@ -4,13 +4,15 @@
   "private": true,
   "scripts": {
     "deploy": "wrangler deploy",
-    "deploy:prod": "wrangler deploy -c wrangler.prod.jsonc ",
+    "deploy:prod": "wrangler -c wrangler.prod.jsonc deploy",
     "dev": "wrangler dev --local --experimental-vectorize-bind-to-prod",
+    "dev:prod": "wrangler -c wrangler.prod.jsonc dev --local --experimental-vectorize-bind-to-prod",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",
     "agents": "^0.0.75",
+    "fetch-to-node": "^2.1.0",
     "zod": "^3.24.3"
   },
   "devDependencies": {
