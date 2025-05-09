@@ -62,11 +62,26 @@ async function statelessHandler(
   request: Request,
   _ctx: ExecutionContext
 ): Promise<Response> {
+  if (request.method === "OPTIONS") {
+    return new Response(null, {
+      status: 204,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "content-type",
+        "Access-Control-Max-Age": "86400",
+      },
+    });
+  }
+
   if (request.method !== "POST") {
     return jsonRpcError(-32000, "Method not allowed.", 405);
   }
 
   const { req, res } = toReqRes(request);
+
+  // Modified to add CORS header
+  res.setHeader("Access-Control-Allow-Origin", "*");
 
   const server = getServer(env);
 

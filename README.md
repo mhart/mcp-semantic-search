@@ -26,7 +26,7 @@ The same code that powers the MCP Server at https://mcp.developers.cloudflare.co
 
 ## Testing in Cloudflare's AI Playground
 
-Go to https://playground.ai.cloudflare.com/ and enter https://mcp.developers.cloudflare.com/sse as the MCP Server
+Go to https://playground.ai.cloudflare.com/ and enter https://mcp.developers.cloudflare.com/mcp as the MCP Server
 
 ## Testing in VSCode
 
@@ -38,4 +38,4 @@ Type Shift-Cmd-P and choose "MCP: Add Server..." and then choose "HTTP (server-s
 npm run dev
 ```
 
-Then go to https://playground.ai.cloudflare.com/ and enter http://localhost:8787/sse as the MCP Server
+Then go to https://playground.ai.cloudflare.com/ and enter http://localhost:8787/mcp as the MCP Server
